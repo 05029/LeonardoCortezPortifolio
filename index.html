@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo Cortez | Profissional Multidisciplinar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2A4365;
+            --secondary: #2C5282;
+            --accent: #4299E1;
+            --accent2: #38B2AC;
+            --dark: #1A202C;
+            --light: #F7FAFC;
+            --gray: #718096;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+            --gradient2: linear-gradient(135deg, var(--accent2), var(--accent));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+        }
+        
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-left: 10px;
+        }
+        
+        .logo-name {
+            font-weight: 800;
+        }
+        
+        .logo-surname {
+            color: var(--accent);
+            font-weight: 800;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.8rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            transition: width 0.4s ease;
+            border-radius: 2px;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+            padding-right: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+        
+        .hero-bg-elements {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .hero-bg-elements::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: var(--gradient);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding-top: 60px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            margin-top: 10px;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.8rem;
+            color: var(--gray);
+            margin-bottom: 2.2rem;
+            font-weight: 500;
+        }
+        
+        .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2.8rem;
+            color: var(--gray);
+            max-width: 600px;
+        }
+        
+        .specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3.2rem;
+        }
+        
+        .specialty-tag {
+            padding: 0.7rem 1.3rem;
+            background: rgba(66, 153, 225, 0.1);
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .specialty-tag i {
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1.1rem 2.4rem;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(66, 153, 225, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(66, 153, 225, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            box-shadow: none;
+            margin-left: 1.2rem;
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .hero-visual {
+            position: relative;
+        }
+        
+        .profile-visual {
+            width: 100%;
+            height: 520px;
+            background: var(--gradient2);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.6s ease;
+        }
+        
+        .profile-visual:hover {
+            transform: perspective(1000px) rotateY(0) rotateX(0);
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: float 6s ease-in-out infinite;
+            z-index: 2;
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 15%;
+            left: 15%;
+            width: 65px;
+            height: 65px;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 65%;
+            right: 20%;
+            width: 55px;
+            height: 55px;
+            animation-delay: 1s;
+        }
+        
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 25%;
+            width: 45px;
+            height: 45px;
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .visual-text {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            color: white;
+            max-width: 320px;
+            z-index: 3;
+        }
+        
+        .visual-text h3 {
+            font-size: 1.9rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .visual-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sections */
+        section {
+            padding: 7rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 5.5rem;
+        }
+        
+        .section-title {
+            font-size: 2.9rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 750px;
+            margin: 1.8rem auto 0;
+        }
+        
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5.5rem;
+            align-items: start;
+        }
+        
+        .about-text p {
+            font-size: 1.15rem;
+            margin-bottom: 1.9rem;
+            line-height: 1.8;
+        }
+        
+        .languages {
+            margin-top: 3.5rem;
+        }
+        
+        .languages h3 {
+            margin-bottom: 1.7rem;
+            font-size: 1.6rem;
+        }
+        
+        .language-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.1rem;
+        }
+        
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.9rem 1.7rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+        
+        .language-item:hover {
+            transform: translateY(-6px);
+        }
+        
+        .language-flag {
+            font-size: 1.7rem;
+        }
+        
+        /* Expertise */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 2.8rem;
+        }
+        
+        .expertise-card {
+            background: white;
+            border-radius: 18px;
+            padding: 2.8rem;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid transparent;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
+            border-top-color: var(--accent);
+        }
+        
+        .expertise-icon {
+            width: 75px;
+            height: 75px;
+            background: rgba(66, 153, 225, 0.1);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 1.7rem;
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .expertise-card p {
+            color: var(--gray);
+            margin-bottom: 1.7rem;
+            line-height: 1.7;
+        }
+        
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .expertise-tag {
+            font-size: 0.85rem;
+            padding: 0.45rem 1rem;
+            background-color: rgba(66, 153, 225, 0.1);
+            border-radius: 20px;
+            color: var(--accent);
+        }
+        
+        /* ===== NOVA SEÇÃO DE PROJETOS AVANÇADA ===== */
+        .projects-showcase {
+            background-color: #F8FAFC;
+            padding: 8rem 0;
+        }
+        
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            background: white;
+            border: 2px solid #E2E8F0;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-3px);
+        }
+        
+        .projects-grid-advanced {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 3rem;
+        }
+        
+        .project-card-advanced {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .project-card-advanced:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-header-advanced {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-header-advanced img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .project-card-advanced:hover .project-header-advanced img {
+            transform: scale(1.05);
+        }
+        
+        .project-category-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card-advanced:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-overlay .btn {
+            padding: 0.9rem 1.8rem;
+            font-size: 0.95rem;
+        }
+        
+        .project-content-advanced {
+            padding: 2.5rem;
+        }
+        
+        .project-content-advanced h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .project-content-advanced p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-bottom: 1.8rem;
+        }
+        
+        .tech-stack-item {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.9rem;
+            background-color: rgba(66, 153, 225, 0.1);
+            border-radius: 20px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-link {
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .project-link.primary {
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .project-link.secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(66, 153, 225, 0.2);
+        }
+        
+        /* Modal de Detalhes do Projeto */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        .project-modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalFadeIn 0.4s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: var(--accent);
+            color: white;
+            transform: rotate(90deg);
+        }
+        
+        .modal-header {
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .modal-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-body {
+            padding: 3rem;
+        }
+        
+        .modal-body h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .modal-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .modal-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .modal-meta-item i {
+            color: var(--accent);
+        }
+        
+        .modal-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+        }
+        
+        .modal-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .modal-feature {
+            background: #F8FAFC;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        
+        .modal-feature h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .modal-tech-details {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .modal-tech-details h3 {
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tech-category h4 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+        
+        .tech-item {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .modal-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .result-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--gradient);
+            border-radius: 12px;
+            color: white;
+        }
+        
+        .result-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5.5rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.9rem;
+            margin-bottom: 2.2rem;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+            margin-bottom: 3.5rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+        }
+        
+        .contact-method-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 18px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.6rem;
+        }
+        
+        .contact-method-details h4 {
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-method-details p {
+            color: var(--gray);
+        }
+        
+        .contact-method-details .phone-number {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 1.05rem;
+        }
+        
+        .contact-method-details .email-address {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.1rem;
+            margin-top: 1.7rem;
+        }
+        
+        .social-link {
+            width: 55px;
+            height: 55px;
+            border-radius: 18px;
+            background-color: rgba(66, 153, 225, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: var(--gradient);
+            color: white;
+            transform: translateY(-6px);
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 1.3rem;
+            margin-bottom: 1.7rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.1);
+        }
+        
+        .contact-form textarea {
+            height: 160px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 6rem 0 2.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 4.5rem;
+            margin-bottom: 4.5rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.2rem;
+        }
+        
+        .footer-quote {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1.2rem;
+            font-size: 1.05rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+        
+        .copyright .developer-info {
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-text h1 {
+                font-size: 3.3rem;
+            }
+            
+            .container {
+                padding: 0 35px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-content,
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-bg-elements {
+                width: 100%;
+                height: 50%;
+            }
+            
+            .hero-bg-elements::before {
+                top: -30%;
+                right: -30%;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+            
+            .container {
+                padding: 0 30px;
+            }
+            
+            .nav-links {
+                gap: 2.2rem;
+            }
+            
+            .hero {
+                padding-top: 90px;
+            }
+            
+            .hero-content {
+                padding-top: 40px;
+            }
+            
+            .projects-grid-advanced {
+                grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2.5rem 0;
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.4s ease;
+                z-index: 999;
+                gap: 1.8rem;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.7rem;
+            }
+            
+            .hero-text .subtitle {
+                font-size: 1.6rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .expertise-grid,
+            .projects-grid-advanced {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-visual {
+                height: 420px;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.2rem;
+            }
+            
+            .contact-method-icon {
+                width: 75px;
+                height: 75px;
+            }
+            
+            section {
+                padding: 6rem 0;
+            }
+            
+            .container {
+                padding: 0 25px;
+            }
+            
+            .visual-text {
+                bottom: 40px;
+                left: 40px;
+                max-width: 280px;
+            }
+            
+            .hero {
+                padding-top: 85px;
+            }
+            
+            .hero-content {
+                padding-top: 30px;
+            }
+            
+            .modal-body {
+                padding: 2rem;
+            }
+            
+            .modal-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+            
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .specialties {
+                justify-content: center;
+            }
+            
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            header {
+                height: 75px;
+            }
+            
+            .hero {
+                padding-top: 85px;
+                min-height: 90vh;
+            }
+            
+            .visual-text {
+                bottom: 30px;
+                left: 30px;
+                max-width: 250px;
+            }
+            
+            .visual-text h3 {
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+            
+            .visual-text p {
+                font-size: 1rem;
+            }
+            
+            .floating-element:nth-child(1) {
+                top: 20%;
+                left: 20%;
+                width: 55px;
+                height: 55px;
+            }
+            
+            .floating-element:nth-child(2) {
+                top: 70%;
+                right: 25%;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .floating-element:nth-child(3) {
+                bottom: 25%;
+                left: 30%;
+                width: 35px;
+                height: 35px;
+            }
+            
+            .hero-content {
+                padding-top: 20px;
+            }
+            
+            .projects-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+            
+            .modal-header {
+                height: 250px;
+            }
+            
+            .modal-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .modal-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-name">Leonardo</span>
+                <span class="logo-surname">Cortez</span>
+            </a>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#expertise">Especialidades</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-elements"></div>
+        <div class="container hero-content">
+            <div class="hero-text fade-in">
+                <h1>Leonardo <span class="highlight">Cortez</span></h1>
+                <div class="subtitle">Profissional Multidisciplinar & <span class="highlight">Consultor Internacional</span></div>
+                <p>Combino expertise em gestão hoteleira, produção multimídia, desenvolvimento web e negociação multissetorial para criar soluções integradas que impulsionam resultados em escala global.</p>
+                
+                <div class="specialties">
+                    <span class="specialty-tag"><i class="fas fa-hotel"></i> Gestão Hoteleira</span>
+                    <span class="specialty-tag"><i class="fas fa-video"></i> Produção Multimídia</span>
+                    <span class="specialty-tag"><i class="fas fa-code"></i> Desenvolvimento Web</span>
+                    <span class="specialty-tag"><i class="fas fa-handshake"></i> Negociação</span>
+                    <span class="specialty-tag"><i class="fas fa-language"></i> 5 Idiomas</span>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn"><i class="fas fa-eye"></i> Ver Projetos</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contratar Serviços</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual fade-in">
+                <div class="profile-visual">
+                    <div class="floating-elements">
+                        <div class="floating-element"><i class="fas fa-globe" style="color: var(--accent); font-size: 1.8rem;"></i></div>
+                        <div class="floating-element"><i class="fas fa-laptop-code" style="color: var(--accent2); font-size: 1.6rem;"></i></div>
+                        <div class="floating-element"><i class="fas fa-film" style="color: var(--secondary); font-size: 1.3rem;"></i></div>
+                    </div>
+                    <div class="visual-text">
+                        <h3>Soluções Integradas</h3>
+                        <p>Gestão, Tecnologia & Comunicação em um único profissional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Sobre Mim</h2>
+                <p class="section-subtitle">Profissional com expertise multidisciplinar e visão estratégica para projetos complexos em diversos setores</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>Com mais de 10 anos de experiência em setores diversificados, desenvolvi uma abordagem única que combina habilidades técnicas avançadas com profundo conhecimento em gestão estratégica e comunicação internacional.</p>
+                    
+                    <p>Como consultor em gestão hoteleira, otimizo operações, experiência do cliente e rentabilidade. Como produtor multimídia, crio conteúdos visuais impactantes que contam histórias e engajam audiências. Como desenvolvedor full-stack, transformo ideias em soluções digitais robustas e escaláveis.</p>
+                    
+                    <p>Minha capacidade de negociação multissetorial, aliada ao domínio de 5 idiomas, permite-me atuar como ponte entre culturas e mercados, facilitando parcerias internacionais e expansão de negócios em escala global.</p>
+                    
+                    <div class="languages fade-in">
+                        <h3>Idiomas Fluentes</h3>
+                        <div class="language-list">
+                            <div class="language-item">
+                                <span class="language-flag">🇧🇷</span>
+                                <span>Português (Nativo)</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-flag">🇺🇸</span>
+                                <span>Inglês (Fluente)</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-flag">🇪🇸</span>
+                                <span>Espanhol (Fluente)</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-flag">🇫🇷</span>
+                                <span>Francês (Avançado)</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-flag">🇩🇪</span>
+                                <span>Alemão (Intermediário)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats fade-in">
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Experiência Internacional</h3>
+                        <p>Projetos implementados em 12 países, com clientes na Europa, América Latina e Ásia, com foco atual em Cabo Verde.</p>
+                        <div class="expertise-tags">
+                            <span class="expertise-tag">Consultoria Global</span>
+                            <span class="expertise-tag">Expansão Internacional</span>
+                            <span class="expertise-tag">Gestão Multicultural</span>
+                        </div>
+                    </div>
+                    
+                    <div class="expertise-card" style="margin-top: 2rem;">
+                        <div class="expertise-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Formação & Certificações</h3>
+                        <p>MBA em Gestão Hoteleira, Certificação em Desenvolvimento Full-Stack, Especialização em Produção Audiovisual.</p>
+                        <div class="expertise-tags">
+                            <span class="expertise-tag">MBA</span>
+                            <span class="expertise-tag">Certificado Full-Stack</span>
+                            <span class="expertise-tag">Audiovisual</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise" style="background-color: #F8FAFC;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Áreas de Especialização</h2>
+                <p class="section-subtitle">Integro múltiplas competências para oferecer soluções completas e inovadoras</p>
+            </div>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Consultoria em Gestão Hoteleira</h3>
+                    <p>Otimização de operações, gestão de receita, experiência do cliente, treinamento de equipes e implementação de sistemas de reservas.</p>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">Revenue Management</span>
+                        <span class="expertise-tag">Experiência do Cliente</span>
+                        <span class="expertise-tag">Sistemas de Reservas</span>
+                        <span class="expertise-tag">Operações Hoteleiras</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Produção Multimédia / Videografia</h3>
+                    <p>Criação de conteúdos visuais profissionais: vídeos corporativos, documentários, campanhas publicitárias, edição e pós-produção.</p>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">Videografia</span>
+                        <span class="expertise-tag">Edição de Vídeo</span>
+                        <span class="expertise-tag">Motion Graphics</span>
+                        <span class="expertise-tag">Fotografia</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desenvolvimento Web Full-Stack</h3>
+                    <p>Desenvolvimento de aplicações web completas: front-end, back-end, bancos de dados, APIs e sistemas personalizados.</p>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">JavaScript</span>
+                        <span class="expertise-tag">React/Node.js</span>
+                        <span class="expertise-tag">UI/UX Design</span>
+                        <span class="expertise-tag">Bancos de Dados</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Negociação Multissetorial</h3>
+                    <p>Mediação e negociação em contextos complexos: contratos internacionais, parcerias estratégicas, resolução de conflitos.</p>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">Contratos Internacionais</span>
+                        <span class="expertise-tag">Mediação</span>
+                        <span class="expertise-tag">Parcerias Estratégicas</span>
+                        <span class="expertise-tag">Diplomacia Corporativa</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Comunicação Multilíngue</h3>
+                    <p>Tradução, interpretação e comunicação eficaz em 5 idiomas para projetos e negociações internacionais.</p>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">Tradução</span>
+                        <span class="expertise-tag">Interpretação</span>
+                        <span class="expertise-tag">Localização</span>
+                        <span class="expertise-tag">Comunicação Intercultural</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Design Gráfico & Branding</h3>
+                    <p>Criação de identidades visuais, materiais gráficos, interfaces de usuário e estratégias de marca.</p>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag">Identidade Visual</span>
+                        <span class="expertise-tag">UI Design</span>
+                        <span class="expertise-tag">Branding</span>
+                        <span class="expertise-tag">Marketing Visual</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOVA SEÇÃO DE PROJETOS AVANÇADA ===== -->
+    <section id="projects" class="projects-showcase">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <p class="section-subtitle">Soluções implementadas que demonstram a integração das minhas múltiplas competências</p>
+            </div>
+            
+            <!-- Filtros por Categoria -->
+            <div class="projects-filter fade-in">
+                <button class="filter-btn active" data-filter="all">Todos os Projetos</button>
+                <button class="filter-btn" data-filter="hotelaria">Gestão Hoteleira</button>
+                <button class="filter-btn" data-filter="multimidia">Multimídia</button>
+                <button class="filter-btn" data-filter="web">Desenvolvimento Web</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            
+            <!-- Grid de Projetos -->
+            <div class="projects-grid-advanced">
+                
+                <!-- Projeto 1: Hotelaria -->
+                <div class="project-card-advanced fade-in" data-category="hotelaria">
+                    <div class="project-header-advanced">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sistema de Gestão Hoteleira">
+                        <div class="project-category-badge">Gestão Hoteleira</div>
+                        <div class="project-overlay">
+                            <button class="btn view-project-btn" data-project="hotel-management">
+                                <i class="fas fa-search"></i> Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content-advanced">
+                        <h3>Sistema de Gestão Hoteleira Premium</h3>
+                        <p>Plataforma completa para gestão de operações hoteleiras com análise de receita, experiência do cliente e otimização de processos.</p>
+                        
+                        <div class="project-tech-stack">
+                            <span class="tech-stack-item">Revenue Management</span>
+                            <span class="tech-stack-item">Análise de Dados</span>
+                            <span class="tech-stack-item">Sistemas de Reserva</span>
+                            <span class="tech-stack-item">Consultoria</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i class="fas fa-external-link-alt"></i> Ver Case Study
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fas fa-chart-line"></i> Ver Métricas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2: Multimídia -->
+                <div class="project-card-advanced fade-in" data-category="multimidia">
+                    <div class="project-header-advanced">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Série Documental">
+                        <div class="project-category-badge">Produção Multimídia</div>
+                        <div class="project-overlay">
+                            <button class="btn view-project-btn" data-project="documentary">
+                                <i class="fas fa-search"></i> Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content-advanced">
+                        <h3>Série Documental "Cultura & Hospedagem"</h3>
+                        <p>Produção completa de série documental explorando tradições hoteleiras em 6 países, com direção, edição e pós-produção.</p>
+                        
+                        <div class="project-tech-stack">
+                            <span class="tech-stack-item">Videografia</span>
+                            <span class="tech-stack-item">Edição de Vídeo</span>
+                            <span class="tech-stack-item">Motion Graphics</span>
+                            <span class="tech-stack-item">Produção</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i class="fab fa-youtube"></i> Assistir Trailer
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fas fa-film"></i> Making Of
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 3: Desenvolvimento Web -->
+                <div class="project-card-advanced fade-in" data-category="web">
+                    <div class="project-header-advanced">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Plataforma de Reservas">
+                        <div class="project-category-badge">Desenvolvimento Web</div>
+                        <div class="project-overlay">
+                            <button class="btn view-project-btn" data-project="booking-platform">
+                                <i class="fas fa-search"></i> Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content-advanced">
+                        <h3>Plataforma de Reservas Multilíngue</h3>
+                        <p>Desenvolvimento full-stack de sistema de reservas integrado para hotelaria internacional com suporte a 5 idiomas.</p>
+                        
+                        <div class="project-tech-stack">
+                            <span class="tech-stack-item">React</span>
+                            <span class="tech-stack-item">Node.js</span>
+                            <span class="tech-stack-item">MongoDB</span>
+                            <span class="tech-stack-item">AWS</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i class="fas fa-external-link-alt"></i> Ver Demo
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fab fa-github"></i> Ver Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 4: Design -->
+                <div class="project-card-advanced fade-in" data-category="design">
+                    <div class="project-header-advanced">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Identidade Visual">
+                        <div class="project-category-badge">Design Gráfico</div>
+                        <div class="project-overlay">
+                            <button class="btn view-project-btn" data-project="branding">
+                                <i class="fas fa-search"></i> Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content-advanced">
+                        <h3>Identidade Visual para Rede Hoteleira</h3>
+                        <p>Criação completa de identidade visual, manual da marca e sistema de design para rede hoteleira premium.</p>
+                        
+                        <div class="project-tech-stack">
+                            <span class="tech-stack-item">Branding</span>
+                            <span class="tech-stack-item">UI/UX Design</span>
+                            <span class="tech-stack-item">Adobe Creative Suite</span>
+                            <span class="tech-stack-item">Design System</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i class="fas fa-palette"></i> Ver Portfólio
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fas fa-book"></i> Manual da Marca
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 5: Negociação -->
+                <div class="project-card-advanced fade-in" data-category="hotelaria">
+                    <div class="project-header-advanced">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Negociação Internacional">
+                        <div class="project-category-badge">Negociação Internacional</div>
+                        <div class="project-overlay">
+                            <button class="btn view-project-btn" data-project="negotiation">
+                                <i class="fas fa-search"></i> Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content-advanced">
+                        <h3>Contrato Internacional para Expansão</h3>
+                        <p>Mediação e negociação de contrato internacional para expansão de rede hoteleira em 3 países diferentes.</p>
+                        
+                        <div class="project-tech-stack">
+                            <span class="tech-stack-item">Mediação</span>
+                            <span class="tech-stack-item">Contratos</span>
+                            <span class="tech-stack-item">Diplomacia</span>
+                            <span class="tech-stack-item">5 Idiomas</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i class="fas fa-file-contract"></i> Ver Case Study
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i class="fas fa-chart-bar"></i> Ver Resultados
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Detalhes dos Projetos -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </div>
+            
+            <div class="modal-header">
+                <img id="modalImage" src="" alt="Projeto">
+            </div>
+            
+            <div class="modal-body">
+                <h2 id="modalTitle">Título do Projeto</h2>
+                
+                <div class="modal-meta">
+                    <div class="modal-meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span id="modalDate">2024</span>
+                    </div>
+                    <div class="modal-meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span id="modalCategory">Categoria</span>
+                    </div>
+                    <div class="modal-meta-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span id="modalRole">Papel no Projeto</span>
+                    </div>
+                </div>
+                
+                <div class="modal-description" id="modalDescription">
+                    Descrição detalhada do projeto...
+                </div>
+                
+                <div class="modal-features" id="modalFeatures">
+                    <!-- Features serão inseridas via JavaScript -->
+                </div>
+                
+                <div class="modal-tech-details">
+                    <h3>Tecnologias & Competências Utilizadas</h3>
+                    <div class="tech-categories" id="modalTech">
+                        <!-- Tech stack será inserido via JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="modal-results" id="modalResults">
+                    <!-- Resultados serão inseridos via JavaScript -->
+                </div>
+                
+                <div class="modal-actions">
+                    <a href="#" class="btn" id="modalLiveLink" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver Projeto ao Vivo
+                    </a>
+                    <a href="#" class="btn btn-outline" id="modalCodeLink" target="_blank">
+                        <i class="fab fa-github"></i> Ver Código/Detalhes
+                    </a>
+                    <a href="#" class="btn btn-outline" id="modalCaseLink" target="_blank">
+                        <i class="fas fa-download"></i> Baixar Case Study
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" style="background-color: #1A202C; color: white;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title" style="color: white;">Entre em Contato</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Pronto para transformar suas ideias em realidade com soluções integradas e multidisciplinares</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Vamos Conversar</h3>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-method-details">
+                                <h4>Email</h4>
+                                <p class="email-address">leonardocortez@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-method-details">
+                                <h4>Telefone/WhatsApp</h4>
+                                <p class="phone-number">+238 917 7161</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-method-details">
+                                <h4>Base & Atuação</h4>
+                                <p>Praia, Cabo Verde | Atuação Global</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-bottom: 1.2rem;">Conecte-se Comigo</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/leonardocortez" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/leonardocortez" target="_blank" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/leonardocortez" target="_blank" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/2389177161" target="_blank" class="social-link" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Seu Nome Completo" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); color: white;">
+                        <input type="email" placeholder="Seu Melhor Email" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); color: white;">
+                        
+                        <select required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); color: white;">
+                            <option value="" disabled selected>Área de Interesse</option>
+                            <option value="hotelaria">Consultoria Hoteleira</option>
+                            <option value="multimidia">Produção Multimídia</option>
+                            <option value="desenvolvimento">Desenvolvimento Web</option>
+                            <option value="negociacao">Negociação/Consultoria</option>
+                            <option value="design">Design Gráfico</option>
+                            <option value="integrado">Projeto Integrado</option>
+                        </select>
+                        
+                        <textarea placeholder="Descreva seu projeto ou necessidade" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); color: white;"></textarea>
+                        
+                        <button type="submit" class="btn" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-rocket"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">Leonardo Cortez</div>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">Profissional multidisciplinar integrando gestão, tecnologia e criatividade para soluções inovadoras em Cabo Verde e internacionalmente.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 style="color: white; margin-bottom: 1.7rem;">Serviços Integrados</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+                        <div style="color: rgba(255,255,255,0.7);">• Consultoria Hoteleira</div>
+                        <div style="color: rgba(255,255,255,0.7);">• Desenvolvimento Web</div>
+                        <div style="color: rgba(255,255,255,0.7);">• Produção Multimídia</div>
+                        <div style="color: rgba(255,255,255,0.7);">• Design Gráfico</div>
+                        <div style="color: rgba(255,255,255,0.7);">• Negociação Internacional</div>
+                        <div style="color: rgba(255,255,255,0.7);">• Tradução/Interpretação</div>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 style="color: white; margin-bottom: 1.7rem;">Contato Direto</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-phone"></i> +238 917 7161
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-envelope"></i> leonardocortez@gmail.com
+                    </p>
+                    <a href="#contact" class="btn" style="background: white; color: var(--dark); margin-bottom: 1.5rem;">Solicitar Orçamento</a>
+                    <p class="footer-quote">"Integrando competências para criar soluções que transcendem fronteiras, de Cabo Verde para o mundo."</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Leonardo Cortez. Todos os direitos reservados.</p>
+                <p class="developer-info">Desenvolvido por Leonardo Cortez | Base: Praia, Cabo Verde</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle for Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.12)';
+                header.style.height = '75px';
+            } else {
+                header.style.boxShadow = '0 3px 15px rgba(0, 0, 0, 0.08)';
+                header.style.height = '80px';
+            }
+        });
+        
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Check on load and scroll
+        window.addEventListener('load', fadeInOnScroll);
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = contactForm.querySelector('input[type="text"]').value;
+            const email = contactForm.querySelector('input[type="email"]').value;
+            const service = contactForm.querySelector('select').value;
+            const message = contactForm.querySelector('textarea').value;
+            
+            // Service labels
+            const serviceLabels = {
+                'hotelaria': 'Consultoria Hoteleira',
+                'multimidia': 'Produção Multimídia',
+                'desenvolvimento': 'Desenvolvimento Web',
+                'negociacao': 'Negociação/Consultoria',
+                'design': 'Design Gráfico',
+                'integrado': 'Projeto Integrado'
+            };
+            
+            const serviceName = serviceLabels[service] || 'Serviço Diverso';
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll just show an alert
+            alert(`Obrigado, ${name}!\n\nSua solicitação para ${serviceName} foi recebida com sucesso.\n\nEntrarei em contato em até 24 horas para discutirmos seu projeto.\n\nVocê também pode me contactar diretamente:\n📱 WhatsApp: +238 917 7161\n📧 Email: leonardocortez@gmail.com`);
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Button feedback
+            const submitBtn = contactForm.querySelector('button');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Mensagem Enviada!';
+            submitBtn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+            }, 4000);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add hover effect to cards
+        document.querySelectorAll('.expertise-card, .project-card-advanced').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Language items animation
+        document.querySelectorAll('.language-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-6px)';
+                this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.1)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 6px 18px rgba(0, 0, 0, 0.06)';
+            });
+        });
+        
+        // WhatsApp click handler
+        document.querySelector('a[href*="wa.me"]').addEventListener('click', function(e) {
+            const confirmWhatsApp = confirm('Deseja abrir o WhatsApp para conversar com Leonardo Cortez?');
+            if (!confirmWhatsApp) {
+                e.preventDefault();
+            }
+        });
+        
+        // ===== NOVO CÓDIGO PARA SISTEMA DE PROJETOS =====
+        
+        // Dados dos projetos
+        const projectsData = {
+            'hotel-management': {
+                title: 'Sistema de Gestão Hoteleira Premium',
+                date: '2024',
+                category: 'Gestão Hoteleira',
+                role: 'Consultor & Desenvolvedor Full-Stack',
+                description: 'Plataforma completa desenvolvida para otimizar operações hoteleiras, aumentar receita e melhorar a experiência do cliente. O sistema integra gestão de receita, análise preditiva, sistema de reservas e dashboard administrativo em tempo real.',
+                features: [
+                    {title: 'Revenue Management', desc: 'Otimização automática de preços baseada em demanda'},
+                    {title: 'Dashboard Analítico', desc: 'Métricas em tempo real e relatórios personalizáveis'},
+                    {title: 'Sistema de Reservas', desc: 'Integrado com múltiplos canais de distribuição'},
+                    {title: 'Experiência do Cliente', desc: 'Sistema de feedback e gestão de reputação'}
+                ],
+                tech: {
+                    'Consultoria': ['Revenue Management', 'Operações Hoteleiras', 'Análise de Dados'],
+                    'Desenvolvimento': ['React', 'Node.js', 'MongoDB', 'AWS'],
+                    'Design': ['UI/UX Design', 'Sistema de Design', 'Prototipagem']
+                },
+                results: [
+                    {number: '+35%', label: 'Aumento na Receita'},
+                    {number: '-40%', label: 'Redução em Processos Manuais'},
+                    {number: '4.8/5', label: 'Satisfação do Cliente'},
+                    {number: '12', label: 'Hotéis Implementados'}
+                ],
+                links: {
+                    live: '#',
+                    code: '#',
+                    case: '#'
+                },
+                image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            },
+            'documentary': {
+                title: 'Série Documental "Cultura & Hospedagem"',
+                date: '2023',
+                category: 'Produção Multimídia',
+                role: 'Produtor, Diretor & Editor',
+                description: 'Série documental de 6 episódios explorando tradições únicas de hospitalidade em diferentes culturas ao redor do mundo. O projeto envolveu pesquisa, produção, filmagem em 6 países, edição e pós-produção completa.',
+                features: [
+                    {title: 'Produção Completa', desc: 'Da pesquisa à distribuição final'},
+                    {title: 'Filmagem Internacional', desc: 'Gravações em 6 países diferentes'},
+                    {title: 'Pós-produção', desc: 'Edição, color grading e motion graphics'},
+                    {title: 'Distribuição', desc: 'Plataformas digitais e eventos especiais'}
+                ],
+                tech: {
+                    'Produção': ['Videografia', 'Direção', 'Roteirização'],
+                    'Pós-produção': ['Adobe Premiere', 'After Effects', 'DaVinci Resolve'],
+                    'Distribuição': ['YouTube', 'Vimeo', 'Eventos Corporativos']
+                },
+                results: [
+                    {number: '500K+', label: 'Visualizações Totais'},
+                    {number: '6', label: 'Episódios Produzidos'},
+                    {number: '12', label: 'Prêmios & Indicações'},
+                    {number: '95%', label: 'Avaliação Positiva'}
+                ],
+                links: {
+                    live: 'https://youtube.com/playlist?list=...',
+                    code: '#',
+                    case: '#'
+                },
+                image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            },
+            'booking-platform': {
+                title: 'Plataforma de Reservas Multilíngue',
+                date: '2024',
+                category: 'Desenvolvimento Web',
+                role: 'Desenvolvedor Full-Stack & UI/UX Designer',
+                description: 'Sistema de reservas desenvolvido do zero para hotelaria internacional, com suporte completo a 5 idiomas (Português, Inglês, Espanhol, Francês, Alemão), múltiplos métodos de pagamento e dashboard administrativo avançado.',
+                features: [
+                    {title: '5 Idiomas', desc: 'Interface completamente localizada'},
+                    {title: 'Pagamentos Multi-moeda', desc: 'Suporte a 10+ métodos de pagamento'},
+                    {title: 'Dashboard Admin', desc: 'Gestão completa em tempo real'},
+                    {title: 'Mobile First', desc: 'Design responsivo otimizado'}
+                ],
+                tech: {
+                    'Frontend': ['React', 'TypeScript', 'Tailwind CSS'],
+                    'Backend': ['Node.js', 'Express', 'MongoDB'],
+                    'Infraestrutura': ['AWS', 'Docker', 'CI/CD']
+                },
+                results: [
+                    {number: '+40%', label: 'Conversão de Reservas'},
+                    {number: '-60%', label: 'Tempo de Carregamento'},
+                    {number: '5', label: 'Idiomas Suportados'},
+                    {number: '99.9%', label: 'Uptime'}
+                ],
+                links: {
+                    live: 'https://booking-platform-demo.com',
+                    code: 'https://github.com/seuusuario/booking-platform',
+                    case: '#'
+                },
+                image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            },
+            'branding': {
+                title: 'Identidade Visual para Rede Hoteleira Premium',
+                date: '2023',
+                category: 'Design Gráfico',
+                role: 'Designer Gráfico & Diretor de Arte',
+                description: 'Desenvolvimento completo da identidade visual para uma rede hoteleira de luxo, incluindo logo, sistema de design, manual da marca, aplicações e estratégia de branding.',
+                features: [
+                    {title: 'Sistema de Design', desc: 'Componentes reutilizáveis e guidelines'},
+                    {title: 'Manual da Marca', desc: 'Documentação completa de uso'},
+                    {title: 'Aplicações', desc: 'Site, material impresso, uniformes'},
+                    {title: 'Estratégia', desc: 'Posicionamento e comunicação visual'}
+                ],
+                tech: {
+                    'Design': ['Adobe Creative Suite', 'Figma', 'Sketch'],
+                    'Branding': ['Estratégia de Marca', 'Posicionamento', 'Arquitetura'],
+                    'Produção': ['Impressão', 'Sinalização', 'Uniforme']
+                },
+                results: [
+                    {number: '+50%', label: 'Reconhecimento da Marca'},
+                    {number: '1º', label: 'Lugar em Design Awards'},
+                    {number: '100+', label: 'Aplicações Desenvolvidas'},
+                    {number: '24', label: 'Meses de Validade do Projeto'}
+                ],
+                links: {
+                    live: '#',
+                    code: '#',
+                    case: 'branding-case-study.pdf'
+                },
+                image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            },
+            'negotiation': {
+                title: 'Contrato Internacional para Expansão Hoteleira',
+                date: '2023',
+                category: 'Negociação Internacional',
+                role: 'Consultor & Negociador Principal',
+                description: 'Mediação e negociação de contrato complexo para expansão de rede hoteleira em 3 países (Portugal, Brasil, Cabo Verde), envolvendo múltiplas partes, legislações diferentes e negociação em 3 idiomas.',
+                features: [
+                    {title: 'Mediação Internacional', desc: 'Coordenação entre múltiplas partes'},
+                    {title: 'Análise Jurídica', desc: 'Revisão em 3 sistemas legais diferentes'},
+                    {title: 'Negociação Multilíngue', desc: 'Comunicação em Português, Inglês e Francês'},
+                    {title: 'Estratégia de Expansão', desc: 'Plano de implementação em 3 países'}
+                ],
+                tech: {
+                    'Negociação': ['Mediação', 'Diplomacia', 'Resolução de Conflitos'],
+                    'Jurídico': ['Contratos Internacionais', 'Compliance', 'Due Diligence'],
+                    'Idiomas': ['Português', 'Inglês', 'Francês', 'Espanhol']
+                },
+                results: [
+                    {number: '€5M', label: 'Economia em Custos'},
+                    {number: '3', label: 'Países Expandidos'},
+                    {number: '6', label: 'Meses de Negociação'},
+                    {number: '100%', label: 'Satisfação das Partes'}
+                ],
+                links: {
+                    live: '#',
+                    code: '#',
+                    case: 'negotiation-case-study.pdf'
+                },
+                image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            }
+        };
+        
+        // Sistema de Filtro
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card-advanced');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Sistema de Modal
+        const projectModal = document.getElementById('projectModal');
+        const modalClose = document.getElementById('modalClose');
+        const viewProjectBtns = document.querySelectorAll('.view-project-btn');
+        
+        viewProjectBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const projectId = btn.getAttribute('data-project');
+                const project = projectsData[projectId];
+                
+                if (project) {
+                    // Atualizar conteúdo do modal
+                    document.getElementById('modalImage').src = project.image;
+                    document.getElementById('modalTitle').textContent = project.title;
+                    document.getElementById('modalDate').textContent = project.date;
+                    document.getElementById('modalCategory').textContent = project.category;
+                    document.getElementById('modalRole').textContent = project.role;
+                    document.getElementById('modalDescription').textContent = project.description;
+                    
+                    // Atualizar features
+                    const featuresContainer = document.getElementById('modalFeatures');
+                    featuresContainer.innerHTML = '';
+                    project.features.forEach(feature => {
+                        const featureElement = document.createElement('div');
+                        featureElement.className = 'modal-feature';
+                        featureElement.innerHTML = `
+                            <h4>${feature.title}</h4>
+                            <p>${feature.desc}</p>
+                        `;
+                        featuresContainer.appendChild(featureElement);
+                    });
+                    
+                    // Atualizar tech stack
+                    const techContainer = document.getElementById('modalTech');
+                    techContainer.innerHTML = '';
+                    for (const [category, items] of Object.entries(project.tech)) {
+                        const categoryElement = document.createElement('div');
+                        categoryElement.className = 'tech-category';
+                        categoryElement.innerHTML = `
+                            <h4>${category}</h4>
+                            <div class="tech-items">
+                                ${items.map(item => `<span class="tech-item">${item}</span>`).join('')}
+                            </div>
+                        `;
+                        techContainer.appendChild(categoryElement);
+                    }
+                    
+                    // Atualizar resultados
+                    const resultsContainer = document.getElementById('modalResults');
+                    resultsContainer.innerHTML = '';
+                    project.results.forEach(result => {
+                        const resultElement = document.createElement('div');
+                        resultElement.className = 'result-item';
+                        resultElement.innerHTML = `
+                            <div class="result-number">${result.number}</div>
+                            <div class="result-label">${result.label}</div>
+                        `;
+                        resultsContainer.appendChild(resultElement);
+                    });
+                    
+                    // Atualizar links
+                    document.getElementById('modalLiveLink').href = project.links.live;
+                    document.getElementById('modalCodeLink').href = project.links.code;
+                    document.getElementById('modalCaseLink').href = project.links.case;
+                    
+                    // Mostrar modal
+                    projectModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Fechar modal
+        modalClose.addEventListener('click', () => {
+            projectModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Fechar modal clicando fora
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                projectModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Fechar modal com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+                projectModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Inicializar filtro "todos" por padrão
+        document.querySelector('.filter-btn[data-filter="all"]').click();
+    </script>
+</body>
+</html>
